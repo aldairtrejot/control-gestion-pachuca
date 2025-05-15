@@ -1,11 +1,12 @@
 <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row" style="background:red">
     <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
         <a class="navbar-brand brand-logo mr-5" href="{{ route('dashboard') }}">
-            <img src="{{ asset('assets/images/imss/logo_imss_blanco.png') }}" class="mr-2" alt="logo"
-                style="width: 200px; height: auto;" />
+            <img src="{{ asset('assets/images/imss/logo_pachuca.png') }}" class="mr-2" alt="logo"
+                style="width: 130px; height: auto;" />
         </a>
+
         <a class="navbar-brand brand-logo-mini" href="{{ route('dashboard') }}"><img
-                src="{{ asset('assets/images/imss/logo_imss_mini_white.png') }}" alt="logo" /></a>
+                src="{{ asset('assets/images/imss/logo_mini_pachuca.png') }}" alt="logo" /></a>
     </div>
     <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">

@@ -47,7 +47,7 @@ function searchInit() {
                     '</div>' +
                     '</span>' +
                     'Modificar </a>' +
-
+/*
                     // Password
                     '<button class="dropdown-item" onclick="showModalTempleta(' + user.id + ')" >' +
                     '<span style="background:#707070" class="icon-container-template">' +
@@ -74,7 +74,7 @@ function searchInit() {
                     '</div>' +
                     '</span>' +
                     'Eliminar </a>' +
-
+*/
                     '</div>' +
                     '</div>' +
                     '</td>' +

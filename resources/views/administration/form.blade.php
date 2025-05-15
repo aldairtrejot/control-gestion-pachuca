@@ -6,8 +6,7 @@
             <div class="row">
                 <div class="col-md-12 grid-margin">
                     <div class="row">
-                        <x-template-tittle.tittle-header tittle="Sistema Integral para Recursos Humanos"
-                            caption="Usuarios" />
+                        <x-template-tittle.tittle-header tittle="Control de Correspondencia" caption="Usuarios" />
                     </div>
                 </div>
             </div>
@@ -43,18 +42,18 @@
                                     <div class="row">
                                         <x-template-form.template-form-input-required label="Password" type="password"
                                             name="userPassword" value="" placeholder="Password" autocomplete="new-password"
-                                            grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4" />
+                                            grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" />
                                         <x-template-form.template-form-input-required label="Confirmar Password"
                                             type="password" name="userConfirmPassword" autocomplete="new-password"
                                             placeholder="Confirmar password" value=""
-                                            grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4" />
+                                            grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" />
                                     </div>
                                 @endif
 
                                 <x-template-tittle.tittle-caption-secon tittle="Roles y estatus" />
 
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-group row">
                                             <label class="col-sm-3 col-form-label"
                                                 style="font-size: 1rem; color: #333;">Roles</label>
@@ -64,12 +63,12 @@
                                                     class="js-example-basic-multiple w-100 custom-select"
                                                     name="userRoles[]" multiple="multiple">
                                                     @foreach($roleOptions as $role)
-                                                                                                        <option value="{{ $role->id }}" @php
-                                                                                                            $userRolesIds = !isset($item->id) ? array_column($userRoles, 'id') : $userRoles->pluck('id')->toArray();
-                                                                                                        @endphp @if(in_array($role->id, old('userRoles', $userRolesIds)))
-                                                                                                        selected @endif>
-                                                                                                            {{ $role->name }}
-                                                                                                        </option>
+                                                        <option value="{{ $role->id }}" @php
+                                                            $userRolesIds = !isset($item->id) ? array_column($userRoles, 'id') : $userRoles->pluck('id')->toArray();
+                                                        @endphp @if(in_array($role->id, old('userRoles', $userRolesIds)))
+                                                            selected @endif>
+                                                            {{ $role->name }}
+                                                        </option>
                                                     @endforeach
                                                 </select>
 
@@ -84,6 +83,7 @@
                                     </div>
                                 </div>
 
+                                {{--
                                 <x-template-tittle.tittle-caption-secon tittle="Asociacion con Nómina" />
 
 
@@ -94,6 +94,8 @@
                                             text="Vincular con nómina" />
                                     </div>
                                 </div>
+
+
 
 
 
@@ -134,7 +136,7 @@
                                             value="{{ optional($item)->name ?? '' }}" />
                                     </div>
                                 </div>
-
+                                --}}
 
                                 <x-template-button.button-form-footer routeBack="{{ route('user.list') }}" />
 

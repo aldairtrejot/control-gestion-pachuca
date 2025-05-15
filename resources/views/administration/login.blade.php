@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>SIRH</title>
+    <title>Control de correspondencia</title>
     <link rel="stylesheet" href="assets/css/login/style.css" />
     <link rel="stylesheet" href="assets/icons/fontawesome-free-6.6/css/all.min.css">
     <link rel="shortcut icon" href="assets/images/imss/favicon.png" />
@@ -18,11 +18,12 @@
                 <div class="row w-100 mx-0">
                     <div class="col-lg-4 mx-auto">
                         <div class="auth-form-light text-left py-5 px-4 px-sm-5">
-                            <div class="brand-logo">
+                            <div class="brand-logo" style="text-align: center;">
                                 <img src="assets/images/imss/logo_imss.png" alt="logo"
-                                    style="width: 300px; height: auto" />
+                                    style="width: 300px; height: auto;" />
                             </div>
-                            <h4>Sistema Integral para Recursos Humanos</h4>
+
+                            <h4>Control de Correspondencia</h4>
                             <h6 class="font-weight-light">Iniciar sesión</h6>
 
                             <form class="pt-3" method="POST" action="{{ route('login') }}">
@@ -75,7 +76,7 @@
                                     </button>
                                 </div>
                                 <div class="text-center mt-4 font-weight-light">
-                                    <a href="{{ route('recover') }}" class="text-primary">
+                                    <a href="#" class="text-primary">
                                         ¿Olvidaste tu contraseña?</a>
                                 </div>
                                 <!--
