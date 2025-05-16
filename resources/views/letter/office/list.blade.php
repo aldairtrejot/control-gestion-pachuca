@@ -8,7 +8,7 @@
                 <div class="col-md-12 grid-margin">
                     <div class="row">
                         <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                            <h3 class="font-weight-bold">Control de gestión</h3>
+                            <h3 class="font-weight-bold">Control de correspondencia</h3>
                             <h5 class="font-weight-normal mb-0">Oficios</h5>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                                         Año
                                     </th>
                                     <th>
-                                        No. Turno Asoc. / Fol. Gestión Asoc.
+                                        No. Documento asoc.
                                     </th>
                                     <th>
                                         Asunto

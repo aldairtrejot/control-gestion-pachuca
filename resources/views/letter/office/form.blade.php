@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-md-12 grid-margin">
                     <div class="row">
-                        <x-template-tittle.tittle-header tittle="Control de gestión" caption="Oficio" />
+                        <x-template-tittle.tittle-header tittle="Control de correspondencia" caption="Oficio" />
                     </div>
                 </div>
             </div>
@@ -97,8 +97,8 @@
                                 <x-template-tittle.tittle-caption-secon tittle="Información general" />
 
                                 <div class="row">
-                                    <x-template-form.template-form-input-required label="Fol. Gestión" type="text"
-                                        name="num_correspondencia" placeholder="NO. CORRESPONDENCIA ASOCIADO"
+                                    <x-template-form.template-form-input-required label="No. Documento asoc." type="text"
+                                        name="num_correspondencia" placeholder="No. Documento asoc."
                                         grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4" autocomplete=""
                                         value="{{$noLetter ?? '' }}" />
 

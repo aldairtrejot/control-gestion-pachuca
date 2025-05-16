@@ -14,7 +14,7 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
             isFieldEmpty($('#fecha_inicio').val(), 'Fecha de inicio') ||
             isFieldEmpty($('#fecha_fin').val(), 'Fecha fin') ||
             //isFieldEmpty($('#num_flojas').val(), 'No. hojas') ||
-            isFieldEmpty($('#folio_gestion').val(), 'Folio de gestión') ||
+            //isFieldEmpty($('#folio_gestion').val(), 'Folio de gestión') ||
             isFieldEmpty($('#fecha_documento').val(), 'Fecha de doc.') ||
             isFieldEmpty($('#id_cat_entidad').val(), 'Entidad') ||
             isFieldEmpty($('#asunto').val(), 'Asunto') ||
@@ -109,21 +109,22 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
             return; // Detener la ejecución aquí
         }
 
-        /*
+
         // Validacion de no document sea unico
         let isValid = getNoUnique($('#id_tbl_correspondencia').val(), $('#num_documento').val(), 'num_documento');
         if (isValid) {
             notyfEM.error('El No. Documento ya está registrado.');
             event.preventDefault();  // Detener el envío si la validación falla
             return;  // Detener la ejecución aquí
-        }*/
-
-        let isValidG = getNoUnique($('#id_tbl_correspondencia').val(), $('#folio_gestion').val(), 'folio_gestion');
-        if (isValidG) {
-            notyfEM.error('El Folio de gestión ya está registrado.');
-            event.preventDefault();  // Detener el envío si la validación falla
-            return;  // Detener la ejecución aquí
         }
+
+        /*
+    let isValidG = getNoUnique($('#id_tbl_correspondencia').val(), $('#folio_gestion').val(), 'folio_gestion');
+    if (isValidG) {
+        notyfEM.error('El Folio de gestión ya está registrado.');
+        event.preventDefault();  // Detener el envío si la validación falla
+        return;  // Detener la ejecución aquí
+    }*/
     } else {
         // Role not administration
         if (

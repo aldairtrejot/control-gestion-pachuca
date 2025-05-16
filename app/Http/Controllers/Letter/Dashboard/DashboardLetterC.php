@@ -73,23 +73,23 @@ class DashboardLetterC extends Controller
         //$this->addStyleTittle($sheet, 'B3', $carbon->format('d/m/Y'), 'E8E8E8', false, 'HORIZONTAL_LEFT');
 
         // Valor de encabezados
-        $this->addStyleValue($sheet, 'A1', 'No.', '10312B');
-        $this->addStyleValue($sheet, 'B1', 'Folio de Gestión', '10312B');
-        $this->addStyleValue($sheet, 'C1', 'Oficio Recibido', '10312B');
-        $this->addStyleValue($sheet, 'D1', 'Fecha de Alta', '10312B');
-        $this->addStyleValue($sheet, 'E1', 'Fecha de Vencimiento', '10312B');
-        $this->addStyleValue($sheet, 'F1', 'Puesto del Remitente', '10312B');
-        $this->addStyleValue($sheet, 'G1', 'Asunto', '10312B');
-        $this->addStyleValue($sheet, 'H1', 'Clave', '10312B');
-        $this->addStyleValue($sheet, 'I1', 'Área', '10312B');
-        $this->addStyleValue($sheet, 'J1', 'Copia a', '10312B');
-        $this->addStyleValue($sheet, 'K1', 'Tipo de Documento', '10312B');
+        $this->addStyleValue($sheet, 'A1', 'No.', '691B32');
+        $this->addStyleValue($sheet, 'B1', 'Folio de Gestión', '691B32');
+        $this->addStyleValue($sheet, 'C1', 'Oficio Recibido', '691B32');
+        $this->addStyleValue($sheet, 'D1', 'Fecha de Alta', '691B32');
+        $this->addStyleValue($sheet, 'E1', 'Fecha de Vencimiento', '691B32');
+        $this->addStyleValue($sheet, 'F1', 'Puesto del Remitente', '691B32');
+        $this->addStyleValue($sheet, 'G1', 'Asunto', '691B32');
+        $this->addStyleValue($sheet, 'H1', 'Clave', '691B32');
+        $this->addStyleValue($sheet, 'I1', 'Área', '691B32');
+        $this->addStyleValue($sheet, 'J1', 'Copia a', '691B32');
+        $this->addStyleValue($sheet, 'K1', 'Tipo de Documento', '691B32');
 
 
         if ($request->inlcuir_usuario_capturo) { //  validacion para incluir datos de captura
-            $this->addStyleValue($sheet, 'L1', 'Fecha de Captura', '10312B');
-            $this->addStyleValue($sheet, 'M1', 'Hora de Captura', '10312B');
-            $this->addStyleValue($sheet, 'N1', 'Usuario que Captura', '10312B');
+            $this->addStyleValue($sheet, 'L1', 'Fecha de Captura', '691B32');
+            $this->addStyleValue($sheet, 'M1', 'Hora de Captura', '691B32');
+            $this->addStyleValue($sheet, 'N1', 'Usuario que Captura', '691B32');
         }
 
 

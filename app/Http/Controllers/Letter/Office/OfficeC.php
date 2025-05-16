@@ -191,8 +191,8 @@ class OfficeC extends Controller
                         'observaciones' => DB::raw("CONCAT(observaciones, '  //  ' , '" . $request->observaciones . "')")
                     ];
 
-                    $letterM::where('folio_gestion', $request->num_correspondencia)->update($data);
-                    $data['folio_gestion'] = $request->num_correspondencia;
+                    $letterM::where('num_documento', $request->num_correspondencia)->update($data);
+                    $data['num_documento'] = $request->num_correspondencia;
                     $logC->edit('correspondencia.tbl_correspondencia', $data);
                 }
             }

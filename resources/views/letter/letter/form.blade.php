@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-md-12 grid-margin">
                     <div class="row">
-                        <x-template-tittle.tittle-header tittle="Control de gestión" caption="Correspondencia" />
+                        <x-template-tittle.tittle-header tittle="Control de correspondencia" caption="Correspondencia" />
                     </div>
                 </div>
             </div>
@@ -17,7 +17,7 @@
                 <div class="card custom-card">
                     <div class="card-body">
                         <x-template-tittle.tittle-caption
-                            tittle="{{ isset($item->id_tbl_correspondencia) ? 'Modificar' : 'Agregar ' }} Correspondencia"
+                            tittle="{{ isset($item->id_tbl_correspondencia) ? 'Modificar' : 'Agregar ' }} correspondencia"
                             route="{{ route('letter.list') }}" />
                         <div>
                             <form id="myForm" action="{{ route('letter.save') }}" method="POST" class="form-sample">

@@ -31,14 +31,14 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
     } else {
         let isValid = getNoCorrespondencia($('#num_correspondencia').val());
         if (isValid) {
-            notyfEM.error('El Fol. Gestión no se encuentra asociado');
+            notyfEM.error('El No. Documento asoc. No se encuentra asociado');
             event.preventDefault();  // Detener el envío si la validación falla
             return;  // Detener la ejecución aquí
         }
 
         let isValidG = getNoUniqueFol($('#id_tbl_oficio').val(), $('#num_correspondencia').val());
         if (isValidG) {
-            notyfEM.error('El Fol. Gestión ya encuentra asociado.');
+            notyfEM.error('El No. Documento asoc. Ya encuentra asociado.');
             event.preventDefault();  // Detener el envío si la validación falla
             return;  // Detener la ejecución aquí
         }

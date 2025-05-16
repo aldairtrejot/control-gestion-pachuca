@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-md-12 grid-margin">
                     <div class="row">
-                        <x-template-tittle.tittle-header tittle="Control de Correspondencia" caption="Usuarios" />
+                        <x-template-tittle.tittle-header tittle="Control de correspondencia" caption="Usuarios" />
                     </div>
                 </div>
             </div>

@@ -48,7 +48,7 @@ class LetterM extends Model
     {
         return DB::table('correspondencia.tbl_correspondencia')
             ->select('id_tbl_correspondencia as id')
-            ->whereRaw('TRIM(UPPER(folio_gestion)) = TRIM(UPPER(?))', [$folGestion])
+            ->whereRaw('TRIM(UPPER(num_documento)) = TRIM(UPPER(?))', [$folGestion])
             ->first();
     }
 
@@ -70,7 +70,7 @@ class LetterM extends Model
     {
         // Realizamos la consulta utilizando el Query Builder de Laravel
         $query = DB::table('correspondencia.tbl_correspondencia')
-            ->whereRaw('UPPER(TRIM(folio_gestion)) = ?', [strtoupper(trim($fol))]) // Parametrizamos la consulta
+            ->whereRaw('UPPER(TRIM(num_documento)) = ?', [strtoupper(trim($fol))]) // Parametrizamos la consulta
             ->first(); // Usamos first() para obtener un único registro
 
         // Retornamos el resultado, si no se encuentra, retorna null
@@ -234,7 +234,7 @@ class LetterM extends Model
         // Realizar la consulta utilizando el query builder de Laravel
         $turno = DB::table('correspondencia.tbl_correspondencia')
             ->where('id_tbl_correspondencia', $id)
-            ->value('folio_gestion');
+            ->value('num_documento');
 
         // Si no se encuentra información, retornamos null
         return $turno ?: null;
@@ -245,7 +245,7 @@ class LetterM extends Model
     {
         // Usamos whereRaw con binding para evitar problemas de inyección SQL
         $turno = DB::table('correspondencia.tbl_correspondencia')
-            ->whereRaw('UPPER(TRIM(num_turno_sistema)) = UPPER(TRIM(?))', [$noTurno])
+            ->whereRaw('UPPER(TRIM(num_documento)) = UPPER(TRIM(?))', [$noTurno])
             ->orWhereRaw('UPPER(TRIM(folio_gestion)) = UPPER(TRIM(?))', [$noTurno])
             ->value('id_tbl_correspondencia'); // Recuperamos el valor de id_tbl_correspondencia
 
@@ -319,7 +319,7 @@ class LetterM extends Model
             ->join('administration.users AS user_enlace', 'correspondencia.tbl_correspondencia.id_usuario_enlace', '=', 'user_enlace.id')
             ->join('correspondencia.cat_area', 'correspondencia.tbl_correspondencia.id_cat_area', '=', 'correspondencia.cat_area.id_cat_area')
             ->where(function ($query) use ($value) {
-                $query->whereRaw('UPPER(TRIM(correspondencia.tbl_correspondencia.num_turno_sistema)) = UPPER(TRIM(?))', [$value])
+                $query->whereRaw('UPPER(TRIM(correspondencia.tbl_correspondencia.num_documento)) = UPPER(TRIM(?))', [$value])
                     ->orWhereRaw('UPPER(TRIM(correspondencia.tbl_correspondencia.folio_gestion)) = UPPER(TRIM(?))', [$value]);
             })
             ->get();

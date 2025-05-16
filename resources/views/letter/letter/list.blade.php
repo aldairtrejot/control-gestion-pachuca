@@ -26,14 +26,14 @@
                 <div class="col-md-12 grid-margin">
                     <div class="row align-items-center">
                         <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                            <h3 class="font-weight-bold">Control de gestión</h3>
+                            <h3 class="font-weight-bold">Control de correspondencia</h3>
                             <h5 class="font-weight-normal mb-0">Corresponencia</h5>
                         </div>
                         @if($letterAdminMatch)
                             <div class="col-12 col-xl-4 text-xl-right">
                                 <button onclick="openModal();" type="button" class="btn btn-link" id="reporteBtn">
-                                    <span class="font-weight-bold" style="color: #10312b;">Informe</span>
-                                    <i class="ti-layout" style="color: #10312b;"></i>
+                                    <span class="font-weight-bold" style="color: #BC955C ;">Informe</span>
+                                    <i class="ti-layout" style="color: #BC955C;"></i>
                                 </button>
                             </div>
                         @endif
@@ -81,9 +81,11 @@
                                     <th>
                                         Fecha de captura
                                     </th>
+                                    {{--
                                     <th>
                                         Fólio de gestión
                                     </th>
+                                    --}}
                                     <th>
                                         No. Documento
                                     </th>

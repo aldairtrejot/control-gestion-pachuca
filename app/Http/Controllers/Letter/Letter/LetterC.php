@@ -313,7 +313,7 @@ class LetterC extends Controller
                 'observaciones' => strtoupper($request->observaciones),
                 'id_cat_area' => $request->id_cat_area,
                 'id_cat_estatus' => $request->id_cat_estatus,
-                'id_tbl_correspondencia' => $letterM->getIdFolGestion($request->folio_gestion)->id,
+                'id_tbl_correspondencia' => $letterM->getIdFolGestion($request->num_documento)->id,
                 'fecha_usuario_captura' => $now,
                 'id_usuario_captura' => Auth::user()->id,
             ]);
