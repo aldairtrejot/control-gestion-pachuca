@@ -2,134 +2,61 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalles del Turno Asignado</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            color: #333;
-            background-color: rgb(255, 255, 255);
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .email-container {
-            width: 100%;
-            max-width: 800px;
-            background-color: #fff;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            box-sizing: border-box;
-        }
-
-        .email-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #235B4E;
-            color: #fff;
-            padding: 15px;
-            border-radius: 10px 10px 0 0;
-            text-align: left;
-            /* Alineación a la izquierda */
-        }
-
-        /* Aplicando la fuente 'Roboto' sin negrita */
-        .email-header h2 {
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            font-weight: 400;
-            /* Peso normal */
-            font-size: 30px;
-            /* Tamaño más grande */
-        }
-
-        .email-header p {
-            margin: 0;
-            font-size: 17px;
-            color: #ccc;
-            /* Color gris */
-        }
-
-        .email-body {
-            padding: 20px;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        .email-footer {
-            text-align: center;
-            font-size: 12px;
-            color: #888;
-            padding-top: 10px;
-            margin-top: 20px;
-            background-color: rgb(255, 255, 255);
-            padding-bottom: 20px;
-        }
-
-        .email-footer p {
-            margin: 5px 0;
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <title>Control de correspondencia</title>
 </head>
 
-<body>
-    <div class="email-container">
-        <table role="presentation" cellpadding="0" cellspacing="0" width="100%">
-            <tr>
-                <td class="email-header">
-                    <p style="color:white">IMSS-BIENESTAR CENTRAL</p>
-                </td>
-            </tr>
-            <tr>
-                <td class="email-body">
-                    <p>¡Hola, {{ $nameUser }}!</p>
-                    <p>Con el fin de dar seguimiento a la correspondencia, se te ha asignado un nuevo número de turno.
-                        A continuación, se detallan algunos puntos:</p>
-                    <ul style="padding-left: 20px;">
-                        <li style="margin-bottom: 10px;">
-                            <strong style="color: #000;">Asunto:</strong> {{ $mailBody->asunto }}
-                        </li>
-                        <li style="margin-bottom: 10px;">
-                            <strong style="color: #000;">No. Turno:</strong> {{ $mailBody->num_turno_sistema }}
-                        </li>
-                        <li style="margin-bottom: 10px;">
-                            <strong style="color: #000;">No. Documento:</strong> {{ $mailBody->num_documento }}
-                        </li>
-                        <li style="margin-bottom: 10px;">
-                            <strong style="color: #000;">Fecha Inicio:</strong> {{ $mailBody->fecha_inicio }}
-                        </li>
-                        <li style="margin-bottom: 10px;">
-                            <strong style="color: #000;">Fecha Fin:</strong> {{ $mailBody->fecha_fin }}
-                        </li>
-                        <li style="margin-bottom: 10px;">
-                            <strong style="color: #000;">Turnado a:</strong> {{ $mailBody->area_descripcion }}
-                        </li>
-                        <li style="margin-bottom: 10px;">
-                            <strong style="color: #000;">Usuario:</strong> {{ $mailBody->usuario_area }}
-                        </li>
-                        <li style="margin-bottom: 10px;">
-                            <strong style="color: #000;">Enlace:</strong> {{ $mailBody->usuario_enlace }}
-                        </li>
-                    </ul>
-                    <p>Saludos cordiales,</p>
-                </td>
-            </tr>
-            <tr>
-                <td class="email-footer">
-                    <p>Este es un correo de notificación automática. Por favor, no respondas a este mensaje.</p>
-                    <p><strong>Sistema Integral para Recursos Humanos</strong></p>
-                </td>
-            </tr>
-        </table>
-    </div>
+<body
+    style="margin:0; padding:20px; background-color:#f9f9f9; font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif;">
+    <table align="center" cellpadding="0" cellspacing="0" width="600"
+        style="background-color:#ffffff; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.1); overflow:hidden;">
+        <tr style="background-color:#7b1f32;">
+            <td style="padding:20px 30px;">
+                <h1 style="color:#fff; font-size:20px; margin:0;">Control de correspondencia</h1>
+                <p style="color:#c9a54b; font-size:14px; margin:5px 0 0;">Turno informativo</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding:30px; color:#333333;">
+                <p style="font-size:16px; line-height:1.6;">
+                    Estimado(a) {{ $nameUser }}, este correo tiene como propósito informar algunos puntos
+                    importantes relacionados con
+                    la correspondencia:
+                </p>
+
+                <table width="100%" cellpadding="8" cellspacing="0" style="margin-top:20px; font-size:16px;">
+                    <tr>
+                        <td width="45%" style="font-weight:bold; color:#7b1f32;">No. Turno:</td>
+                        <td style="color:#000000">{{ $mailBody->num_turno_sistema }}</td>
+                    </tr>
+                    <tr>
+                        <td width="45%" style="font-weight:bold; color:#7b1f32;">No. Documento:</td>
+                        <td style="color:#000000">{{ $mailBody->num_documento }}</td>
+                    </tr>
+                    <tr>
+                        <td width="45%" style="font-weight:bold; color:#7b1f32;">Turnado a:</td>
+                        <td style="color:#000000">{{ $mailBody->area_descripcion }}</td>
+                    </tr>
+                    <tr>
+                        <td width="45%" style="font-weight:bold; color:#7b1f32;">Asunto:</td>
+                        <td style="color:#000000">{{ $mailBody->asunto }}</td>
+                    </tr>
+                </table>
+
+                <p style="font-size:16px; line-height:1.6; margin-top:30px;">
+                    Saludos cordiales,
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding:20px; background-color:#f2f2f2; text-align:center;">
+                <p style="font-size:13px; color:#777777;">
+                    Este es un correo de notificación automática. Por favor, no responda a este mensaje.
+                </p>
+            </td>
+        </tr>
+    </table>
+    <br><br>
 </body>
 
 </html>

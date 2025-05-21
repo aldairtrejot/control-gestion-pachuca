@@ -17,7 +17,7 @@ class EmailC extends Controller
         try {
             // Declarar el asunto y cuerpo del correo
             $letterM = new LetterM();
-            $subject = 'No. DE TURNO ASIGNADO PARA CORRESPONDENCIA';
+            $subject = 'Turno informativo';
             $body = 'Este es el contenido dinámico del correo';
             $mailBody = $letterM->mailLetter($request->id);
 
@@ -32,7 +32,7 @@ class EmailC extends Controller
 
             // Enviar el correo con la vista Blade
             Mail::send('letter.mail.mailLetter', $data, function ($message) use ($subject, $request) {
-                $message->from('soporterh.imssbienestar@gmail.com', 'SIRH')  // Dirección del remitente
+                $message->from('soporterh.imssbienestar@gmail.com', 'Control de correspondencia')  // Dirección del remitente
                     ->to($request->mail)  // Dirección del destinatario
                     ->subject($subject);  // Asunto del correo
             });

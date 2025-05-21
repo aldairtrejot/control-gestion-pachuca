@@ -96,9 +96,11 @@ function searchInit() {
                                     <a href="${finalCloud}" style="background: #8a6f19; padding: 8px 12px;" class="custom-button custom-button-x" title="Cloud">
                                         <i style="color: white; font-size: 15px" class="fa fa-cloud"></i>
                                     </a>
+                                    <!--
                                     <a href="${urlReport}" style="background: #462c95; padding: 8px 12px;" class="custom-button custom-button-x" title="Reporte">
                                         <i style="color: white; font-size: 15px" class="fa fa-file"></i>
                                     </a>
+                                    -->
                                 </div>
                             </td>
                             <td>${object.anio}</td>

@@ -68,7 +68,7 @@
 
         <div class="modal-buttons custom-modal-buttons">
             <button style="font-weight: bold;" onclick="hiddenCopy();">Cancelar</button>
-            <button style="font-weight: bold;color: #10312b" onclick="saveCopy();">Confirmar</button>
+            <button style="font-weight: bold;color: #BC955C" onclick="saveCopy();">Confirmar</button>
         </div>
     </div>
 
