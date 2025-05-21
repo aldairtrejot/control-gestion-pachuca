@@ -54,7 +54,7 @@ class OfficeM extends Model
                     WHEN correspondencia.tbl_oficio.es_por_area THEN 
                         correspondencia.tbl_oficio.num_documento_area 
                     ELSE 
-                        correspondencia.tbl_correspondencia.num_documento 
+                        correspondencia.tbl_correspondencia.num_turno_sistema 
                 END AS num_documento
             '),
                 DB::raw('
@@ -92,7 +92,7 @@ class OfficeM extends Model
             // Condiciones de búsqueda centralizadas en una sola cláusula
             $query->where(function ($query) use ($searchValue) {
                 $query->whereRaw("UPPER(TRIM(correspondencia.tbl_oficio.num_turno_sistema)) LIKE ?", ['%' . $searchValue . '%'])
-                    ->orWhereRaw("UPPER(TRIM(correspondencia.tbl_correspondencia.folio_gestion)) LIKE ?", ['%' . $searchValue . '%'])
+                    ->orWhereRaw("UPPER(TRIM(correspondencia.tbl_correspondencia.num_turno_sistema)) LIKE ?", ['%' . $searchValue . '%'])
                     ->orWhereRaw("UPPER(TRIM(correspondencia.tbl_oficio.num_documento_area)) LIKE ?", ['%' . $searchValue . '%'])
                     ->orWhereRaw("UPPER(TRIM(correspondencia.cat_anio.descripcion)) LIKE ?", ['%' . $searchValue . '%'])
                     ->orWhereRaw("UPPER(TRIM(correspondencia.tbl_correspondencia.observaciones)) LIKE ?", ['%' . $searchValue . '%'])
@@ -119,7 +119,7 @@ class OfficeM extends Model
                 'correspondencia.tbl_oficio.num_turno_sistema AS num_turno_sistema',
                 DB::raw('CASE WHEN correspondencia.tbl_oficio.es_por_area THEN 
                                     correspondencia.tbl_oficio.num_documento_area ELSE 
-                                    correspondencia.tbl_correspondencia.num_documento 
+                                    correspondencia.tbl_correspondencia.num_turno_sistema 
                                 END AS num_turno_sistema_correspondencia'),
                 DB::raw("TO_CHAR(correspondencia.tbl_oficio.fecha_inicio::date, 'DD/MM/YYYY') AS fecha_inicio"),
                 DB::raw("TO_CHAR(correspondencia.tbl_oficio.fecha_fin::date, 'DD/MM/YYYY') AS fecha_fin"),
@@ -187,7 +187,7 @@ class OfficeM extends Model
         // Start the query using the Query Builder
         $query = DB::table('correspondencia.tbl_oficio')
             ->join('correspondencia.tbl_correspondencia', 'correspondencia.tbl_oficio.id_tbl_correspondencia', '=', 'correspondencia.tbl_correspondencia.id_tbl_correspondencia')
-            ->whereRaw('TRIM(UPPER(correspondencia.tbl_correspondencia.num_documento)) = ?', [trim(strtoupper($folGestion))]);
+            ->whereRaw('TRIM(UPPER(correspondencia.tbl_correspondencia.num_turno_sistema)) = ?', [trim(strtoupper($folGestion))]);
 
         // If the ID is set, add the condition to exclude the specific ID
         if (isset($id)) {

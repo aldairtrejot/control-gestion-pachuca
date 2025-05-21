@@ -31,7 +31,7 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
     } else {
         let isValid = getNoCorrespondencia($('#num_correspondencia').val());
         if (isValid) {
-            notyfEM.error('El No. Documento asoc. No se encuentra asociado');
+            notyfEM.error('El No. Turno Asoc. No se encuentra asociado');
             event.preventDefault();  // Detener el envío si la validación falla
             return;  // Detener la ejecución aquí
         }

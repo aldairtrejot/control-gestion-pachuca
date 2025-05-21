@@ -52,7 +52,7 @@ class InsideM extends Model
                 DB::raw("CASE 
                             WHEN TRIM(correspondencia.tbl_correspondencia.folio_gestion) <> '' 
                                 AND correspondencia.tbl_correspondencia.folio_gestion IS NOT NULL
-                            THEN correspondencia.tbl_correspondencia.folio_gestion
+                            THEN correspondencia.tbl_correspondencia.num_turno_sistema
                             ELSE ''
                         END AS foio_gestion"),
                 DB::raw("UPPER(correspondencia.tbl_interno.asunto) AS asunto"),
@@ -77,7 +77,7 @@ class InsideM extends Model
             // Condiciones de búsqueda centralizadas en una sola cláusula
             $query->where(function ($query) use ($searchValue) {
                 $query->whereRaw("UPPER(TRIM(correspondencia.tbl_interno.num_documento_area)) LIKE ?", ['%' . $searchValue . '%'])
-                    ->orWhereRaw("UPPER(TRIM(correspondencia.tbl_correspondencia.folio_gestion)) LIKE ?", ['%' . $searchValue . '%'])
+                    ->orWhereRaw("UPPER(TRIM(correspondencia.tbl_correspondencia.num_turno_sistema)) LIKE ?", ['%' . $searchValue . '%'])
                     ->orWhereRaw("UPPER(TRIM(correspondencia.cat_anio.descripcion)) LIKE ?", ['%' . $searchValue . '%'])
                     ->orWhereRaw("UPPER(TRIM(correspondencia.tbl_interno.num_documento_area)) LIKE ?", ['%' . $searchValue . '%'])
                     ->orWhereRaw("UPPER(TRIM(correspondencia.tbl_interno.asunto)) LIKE ?", ['%' . $searchValue . '%']);
@@ -100,7 +100,7 @@ class InsideM extends Model
             ->leftjoin('correspondencia.tbl_correspondencia', 'correspondencia.tbl_interno.id_tbl_correspondencia', '=', 'correspondencia.tbl_correspondencia.id_tbl_correspondencia')
             ->join('correspondencia.cat_anio', 'correspondencia.tbl_interno.id_cat_anio', '=', 'correspondencia.cat_anio.id_cat_anio')
             ->select(
-                'correspondencia.tbl_interno.num_turno_sistema AS num_turno_sistema',
+                'correspondencia.tbl_interno.num_documento_area AS num_turno_sistema',
                 DB::raw('CASE WHEN correspondencia.tbl_interno.es_por_area THEN 
                                     correspondencia.tbl_interno.num_documento_area ELSE 
                                     correspondencia.tbl_correspondencia.num_turno_sistema 
@@ -170,7 +170,7 @@ class InsideM extends Model
         // Start the query using the Query Builder
         $query = DB::table('correspondencia.tbl_interno')
             ->join('correspondencia.tbl_correspondencia', 'correspondencia.tbl_interno.id_tbl_correspondencia', '=', 'correspondencia.tbl_correspondencia.id_tbl_correspondencia')
-            ->whereRaw('TRIM(UPPER(correspondencia.tbl_correspondencia.folio_gestion)) = ?', [trim(strtoupper($folGestion))]);
+            ->whereRaw('TRIM(UPPER(correspondencia.tbl_correspondencia.num_turno_sistema)) = ?', [trim(strtoupper($folGestion))]);
 
         // If the ID is set, add the condition to exclude the specific ID
         if (isset($id)) {

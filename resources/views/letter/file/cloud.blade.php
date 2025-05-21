@@ -8,7 +8,7 @@
                 <div class="col-md-12 grid-margin">
                     <div class="row">
                         <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                            <h3 class="font-weight-bold">Gestión de control</h3>
+                            <h3 class="font-weight-bold">Control de correspondencia</h3>
                             <h5 class="font-weight-normal mb-0">Lineamientos</h5>
                         </div>
                     </div>
@@ -43,11 +43,11 @@
                             <x-template-tittle.tittle-caption-secon tittle="Doc. seleccionado" />
                             <div class="contenedor">
                                 <div class="item">
-                                    <label class="etiqueta">No. Turno:</label>
+                                    <label class="etiqueta">No. Turno módulo:</label>
                                     <label id="_noOficio" class="valor"></label>
                                 </div>
                                 <div class="item">
-                                    <label class="etiqueta">No. Turno Asoc.:</label>
+                                    <label class="etiqueta">No. Folio:</label>
                                     <label id="_noCorrespondencia" class="valor"></label>
                                 </div>
                                 <div class="item">

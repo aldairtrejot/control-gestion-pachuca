@@ -12,7 +12,7 @@ $(document).ready(function () {
     //getRole(); //Obtener y definir los roles para no tener los input
     setCheckboxArea();
     tooltip('#id_checkbox_Template_tooltip', 'Marcar para añadir un folio de gestión manual'); // Tooltip
-    tooltip('#num_correspondencia', 'Asociar por Fol. Gestión'); // Tooltip
+    tooltip('#num_correspondencia', 'Asociar por No. Turno'); // Tooltip
     //getDataUsers($('#id_cat_area').val(), $('#id_usuario_area').val(), $('#id_usuario_enlace').val(), '#_labArea', '#_labUsuario', '#_labEnlace') // funcion de usuario, area
 });
 

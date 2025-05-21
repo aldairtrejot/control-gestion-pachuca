@@ -7,7 +7,7 @@
 
         <div class="modal-buttons">
             <button style="font-weight: bold;" id="{{ $idCancel }}">Cancelar</button>
-            <button style="font-weight: bold;color: #10312b" onclick="{{ $functionConfirm }}" id="{{ $idConfirm }}">Confirmar</button>
+            <button style="font-weight: bold;color: #BC955C" onclick="{{ $functionConfirm }}" id="{{ $idConfirm }}">Confirmar</button>
         </div>
     </div>
 </div>

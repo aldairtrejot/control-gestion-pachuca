@@ -1,7 +1,7 @@
 <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row" style="background:red">
     <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
         <a class="navbar-brand brand-logo mr-5" href="{{ route('dashboard') }}">
-            <img src="{{ asset('assets/images/imss/logo_pachuca.png') }}" class="mr-2" alt="logo"
+            <img src="{{ asset('assets/images/imss/logo_pachuca1.png') }}" class="mr-2" alt="logo"
                 style="width: 130px; height: auto;" />
         </a>
 

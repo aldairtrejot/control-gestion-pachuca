@@ -1,5 +1,5 @@
 <!-- TEMPLATE APP-->
-<?php include(resource_path('views/config.php')); ?>
+<?php include resource_path('views/config.php'); ?>
 <x-template-app.app-layout>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <div class="main-panel">
@@ -55,7 +55,7 @@
                                         Año
                                     </th>
                                     <th>
-                                        No. Documento asoc.
+                                        No. Turno asoc.
                                     </th>
                                     <th>
                                         Asunto

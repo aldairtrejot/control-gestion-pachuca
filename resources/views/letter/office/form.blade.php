@@ -1,6 +1,6 @@
 <!-- TEMPLATE APP -->
 <x-template-app.app-layout>
-    <?php include(resource_path('views/config.php')); ?>
+    <?php include resource_path('views/config.php'); ?>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <div class="main-panel">
         <div class="content-wrapper">
@@ -26,7 +26,7 @@
                                 @csrf
 
                                 <x-template-form.template-form-input-hidden name="bool_user_role"
-                                    value="{{  $letterAdminMatch }}" />
+                                    value="{{ $letterAdminMatch }}" />
 
                                 <x-template-form.template-form-input-hidden name="id_tbl_oficio"
                                     value="{{ optional($item)->id_tbl_oficio ?? '' }}" />
@@ -52,9 +52,11 @@
                                     value="{{ optional($item)->id_tbl_correspondencia ?? '' }}" />
 
                                 <!-- itme-->
-                                <x-template-form.template-form-input-hidden name="area_format" value="{{ $area }}" />
+                                <x-template-form.template-form-input-hidden name="area_format"
+                                    value="{{ $area }}" />
 
-                                <x-template-form.template-form-input-hidden name="user_name" value="{{ $user_name }}" />
+                                <x-template-form.template-form-input-hidden name="user_name"
+                                    value="{{ $user_name }}" />
 
                                 <x-template-form.template-form-input-hidden name="user_enlace"
                                     value="{{ $user_enlace }}" />
@@ -66,7 +68,7 @@
                                 <x-template-tittle.tittle-caption-secon tittle="Información de oficio" />
                                 <div class="contenedor">
                                     <div class="item">
-                                        <label class="etiqueta">No. Turno:</label>
+                                        <label class="etiqueta">No. Turno módulo:</label>
                                         <label id="_labNoCorrespondencia" class="valor"></label>
                                     </div>
                                     <div class="item">
@@ -97,20 +99,20 @@
                                 <x-template-tittle.tittle-caption-secon tittle="Información general" />
 
                                 <div class="row">
-                                    <x-template-form.template-form-input-required label="No. Documento asoc." type="text"
+                                    <x-template-form.template-form-input-required label="No. Turno asoc." type="text"
                                         name="num_correspondencia" placeholder="No. Documento asoc."
                                         grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4" autocomplete=""
-                                        value="{{$noLetter ?? '' }}" />
+                                        value="{{ $noLetter ?? '' }}" />
 
                                     <x-template-form.template-form-input-required label="Fecha de inicio" type="date"
                                         name="fecha_inicio" placeholder=""
                                         grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4" autocomplete=""
-                                        value="{{optional($item)->fecha_inicio ?? '' }}" />
+                                        value="{{ optional($item)->fecha_inicio ?? '' }}" />
 
                                     <x-template-form.template-form-input-required label="Fecha fin" type="date"
                                         name="fecha_fin" placeholder=""
                                         grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4" autocomplete=""
-                                        value="{{optional($item)->fecha_fin ?? '' }}" />
+                                        value="{{ optional($item)->fecha_fin ?? '' }}" />
                                 </div>
 
                                 <div class="row">
@@ -145,7 +147,7 @@
                                         <x-template-form.template-form-input-required label="No. Doc" type="text"
                                             name="num_documento_area" placeholder="NO. DOCUMENTO"
                                             grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" autocomplete=""
-                                            value="{{optional($item)->num_documento_area ?? '' }}" />
+                                            value="{{ optional($item)->num_documento_area ?? '' }}" />
                                     </div>
 
                                     <div class="row">

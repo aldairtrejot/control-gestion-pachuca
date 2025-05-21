@@ -19,7 +19,7 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
     if ($('#num_correspondencia').val() !== '') {
         let isValid = getNoCorrespondencia($('#num_correspondencia').val());
         if (isValid) {
-            notyfEM.error('El Folio de gestión asociado no existe');
+            notyfEM.error('El No. Turno Asoc. No se encuentra asociado');
             event.preventDefault();  // Detener el envío si la validación falla
             return;  // Detener la ejecución aquí
         }
@@ -27,7 +27,7 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
 
     let isValidG = getNoUniqueFol($('#id_tbl_interno').val(), $('#num_correspondencia').val());
     if (isValidG) {
-        notyfEM.error('El Folio de gestión ya encuentra asociado.');
+        notyfEM.error('El No. Turno Asoc. Ya encuentra asociado.');
         event.preventDefault();  // Detener el envío si la validación falla
         return;  // Detener la ejecución aquí
     }

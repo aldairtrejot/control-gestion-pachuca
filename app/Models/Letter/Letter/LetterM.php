@@ -70,7 +70,7 @@ class LetterM extends Model
     {
         // Realizamos la consulta utilizando el Query Builder de Laravel
         $query = DB::table('correspondencia.tbl_correspondencia')
-            ->whereRaw('UPPER(TRIM(num_documento)) = ?', [strtoupper(trim($fol))]) // Parametrizamos la consulta
+            ->whereRaw('UPPER(TRIM(num_turno_sistema)) = ?', [strtoupper(trim($fol))]) // Parametrizamos la consulta
             ->first(); // Usamos first() para obtener un único registro
 
         // Retornamos el resultado, si no se encuentra, retorna null
@@ -85,6 +85,7 @@ class LetterM extends Model
                 'correspondencia.tbl_correspondencia.id_tbl_correspondencia AS id',
                 //DB::raw('UPPER(correspondencia.tbl_correspondencia.num_turno_sistema) AS num_turno_sistema'),
                 DB::raw('UPPER(correspondencia.tbl_correspondencia.num_documento) AS num_documento'),
+                DB::raw('UPPER(correspondencia.tbl_correspondencia.num_turno_sistema) AS num_turno_sistema'),
                 DB::raw('UPPER(correspondencia.tbl_correspondencia.folio_gestion) AS folio_gestion'), // No es necesario DISTINCT
                 DB::raw('UPPER(correspondencia.cat_estatus.descripcion) AS estatus'),
                 DB::raw('UPPER(correspondencia.cat_tramite.descripcion) AS tramite'),
@@ -129,6 +130,7 @@ class LetterM extends Model
             // Condiciones de búsqueda centralizadas en una sola cláusula
             $query->where(function ($query) use ($searchValue) {
                 $query->whereRaw("UPPER(TRIM(correspondencia.tbl_correspondencia.num_documento)) LIKE ?", ['%' . $searchValue . '%'])
+                    ->orWhereRaw("UPPER(TRIM(correspondencia.tbl_correspondencia.num_turno_sistema)) LIKE ?", ['%' . $searchValue . '%'])
                     ->orWhereRaw("UPPER(TRIM(correspondencia.tbl_correspondencia.asunto)) LIKE ?", ['%' . $searchValue . '%'])
                     ->orWhereRaw("UPPER(TRIM(correspondencia.cat_estatus.descripcion)) LIKE ?", ['%' . $searchValue . '%'])
                     ->orWhereRaw("UPPER(TRIM(correspondencia.tbl_correspondencia.folio_gestion)) LIKE ?", ['%' . $searchValue . '%'])
@@ -234,7 +236,7 @@ class LetterM extends Model
         // Realizar la consulta utilizando el query builder de Laravel
         $turno = DB::table('correspondencia.tbl_correspondencia')
             ->where('id_tbl_correspondencia', $id)
-            ->value('num_documento');
+            ->value('num_turno_sistema');
 
         // Si no se encuentra información, retornamos null
         return $turno ?: null;
@@ -245,8 +247,7 @@ class LetterM extends Model
     {
         // Usamos whereRaw con binding para evitar problemas de inyección SQL
         $turno = DB::table('correspondencia.tbl_correspondencia')
-            ->whereRaw('UPPER(TRIM(num_documento)) = UPPER(TRIM(?))', [$noTurno])
-            ->orWhereRaw('UPPER(TRIM(folio_gestion)) = UPPER(TRIM(?))', [$noTurno])
+            ->whereRaw('UPPER(TRIM(num_turno_sistema)) = UPPER(TRIM(?))', [$noTurno])
             ->value('id_tbl_correspondencia'); // Recuperamos el valor de id_tbl_correspondencia
 
         // Retornamos el valor, si no se encuentra, será null
@@ -319,8 +320,7 @@ class LetterM extends Model
             ->join('administration.users AS user_enlace', 'correspondencia.tbl_correspondencia.id_usuario_enlace', '=', 'user_enlace.id')
             ->join('correspondencia.cat_area', 'correspondencia.tbl_correspondencia.id_cat_area', '=', 'correspondencia.cat_area.id_cat_area')
             ->where(function ($query) use ($value) {
-                $query->whereRaw('UPPER(TRIM(correspondencia.tbl_correspondencia.num_documento)) = UPPER(TRIM(?))', [$value])
-                    ->orWhereRaw('UPPER(TRIM(correspondencia.tbl_correspondencia.folio_gestion)) = UPPER(TRIM(?))', [$value]);
+                $query->whereRaw('UPPER(TRIM(correspondencia.tbl_correspondencia.num_turno_sistema)) = UPPER(TRIM(?))', [$value]);
             })
             ->get();
     }

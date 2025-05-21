@@ -1,9 +1,9 @@
 <!-- TEMPLATE APP-->
-<?php include(resource_path('views/config.php')); ?>
+<?php include resource_path('views/config.php'); ?>
 <x-template-app.app-layout>
 
 
-    <x-template-form.template-form-input-hidden name="bool_user_role" value="{{  $letterAdminMatch }}" />
+    <x-template-form.template-form-input-hidden name="bool_user_role" value="{{ $letterAdminMatch }}" />
 
 
     <style>
@@ -29,7 +29,7 @@
                             <h3 class="font-weight-bold">Control de correspondencia</h3>
                             <h5 class="font-weight-normal mb-0">Corresponencia</h5>
                         </div>
-                        @if($letterAdminMatch)
+                        @if ($letterAdminMatch)
                             <div class="col-12 col-xl-4 text-xl-right">
                                 <button onclick="openModal();" type="button" class="btn btn-link" id="reporteBtn">
                                     <span class="font-weight-bold" style="color: #BC955C ;">Informe</span>
@@ -53,7 +53,7 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <h4 class="card-title">Correspondencia</h4>
-                                @if($letterAdminMatch)
+                                @if ($letterAdminMatch)
                                     <p class="card-description">
                                         ¿Deseas agregar un registro? <a href="{{ route('letter.create') }}"
                                             class="text-danger" style="margin-left: 10px;">
@@ -81,11 +81,9 @@
                                     <th>
                                         Fecha de captura
                                     </th>
-                                    {{--
                                     <th>
-                                        Fólio de gestión
+                                        No. Turno
                                     </th>
-                                    --}}
                                     <th>
                                         No. Documento
                                     </th>
