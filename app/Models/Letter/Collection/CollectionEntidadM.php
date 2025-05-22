@@ -12,7 +12,7 @@ class CollectionEntidadM extends Model
     {
         $result = DB::table(table: 'correspondencia.cat_entidad')
             ->select('id_cat_entidad as id', 'descripcion as descripcion')
-            ->where('estatus', true)
+            ->where('estatus', '=', true)
             ->orderBy('descripcion', 'ASC')
             ->get();
 
@@ -24,22 +24,22 @@ class CollectionEntidadM extends Model
     {
         $result = DB::table(table: 'correspondencia.cat_entidad')
             ->select('id_cat_entidad as id', 'descripcion as descripcion')
+            ->where('id_cat_entidad', '=', 14)
             ->orderBy('descripcion', 'ASC')
             ->get();
 
         return $result;
     }
 
-    
+
     // La funcón obtiene el estado actual del id que se selecciono
     public function edit($id)
     {
-        $query = DB::table('correspondencia.cat_entidad')
-        ->select('id_cat_entidad as id', 'descripcion as descripcion')
-            ->where('correspondencia.cat_entidad.id_cat_entidad', '=', $id);
-
-        // Usar first() para obtener un único resultado
-        $result = $query->first();
-        return $result;
+        return DB::table('correspondencia.cat_entidad')
+            ->select('id_cat_entidad as id', 'descripcion')
+            ->where('id_cat_entidad', $id)
+            ->where('estatus', '=', true)
+            ->first();
     }
+
 }
