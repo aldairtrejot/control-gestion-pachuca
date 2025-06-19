@@ -102,17 +102,17 @@
                                     <x-template-form.template-form-input-required label="No. Turno asoc." type="text"
                                         name="num_correspondencia" placeholder="No. Documento asoc."
                                         grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4" autocomplete=""
-                                        value="{{ $noLetter ?? '' }}" />
+                                        value="{{ $noLetter ?? '' }}" required="true"/>
 
                                     <x-template-form.template-form-input-required label="Fecha de inicio" type="date"
                                         name="fecha_inicio" placeholder=""
                                         grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4" autocomplete=""
-                                        value="{{ optional($item)->fecha_inicio ?? '' }}" />
+                                        value="{{ optional($item)->fecha_inicio ?? '' }}" required="true"/>
 
                                     <x-template-form.template-form-input-required label="Fecha fin" type="date"
                                         name="fecha_fin" placeholder=""
                                         grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4" autocomplete=""
-                                        value="{{ optional($item)->fecha_fin ?? '' }}" />
+                                        value="{{ optional($item)->fecha_fin ?? '' }}" required="true"/>
                                 </div>
 
                                 <div class="row">
@@ -120,12 +120,12 @@
                                     <x-template-form.template-form-input-text-area
                                         grid="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" label="Asunto"
                                         name="asunto" placeholder="ASUNTO"
-                                        value="{{ optional($item)->asunto ?: '' }}" />
+                                        value="{{ optional($item)->asunto ?: '' }}" required="true" />
 
                                     <x-template-form.template-form-input-text-area
                                         grid="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" label="Observaciones"
                                         name="observaciones" placeholder="OBSERVACIONES"
-                                        value="{{ optional($item)->observaciones ?: '' }}" />
+                                        value="{{ optional($item)->observaciones ?: '' }}" required="true"/>
 
                                 </div>
 

@@ -89,17 +89,17 @@
                                     <x-template-form.template-form-input-required label="No. Documento" type="text"
                                         name="num_documento" placeholder="NO. DOCUMENTO"
                                         grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4" autocomplete=""
-                                        value="{{optional($item)->num_documento ?? '' }}" />
+                                        value="{{optional($item)->num_documento ?? '' }}" required="true"/>
 
                                     <x-template-form.template-form-input-required label="Folio de gestión" type="text"
                                         name="folio_gestion" placeholder="FOLIO DE GESTIÓN"
                                         grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4" autocomplete=""
-                                        value="{{optional($item)->folio_gestion ?? '' }}" />
+                                        value="{{optional($item)->folio_gestion ?? '' }}" required="true"/>
 
                                     <x-template-form.template-form-input-required label="Fecha de doc." type="date"
                                         name="fecha_documento" placeholder=""
                                         grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4" autocomplete=""
-                                        value="{{optional($item)->fecha_documento ?? '' }}" />
+                                        value="{{optional($item)->fecha_documento ?? '' }}" required="true"/>
 
                                 </div>
 
@@ -108,12 +108,12 @@
                                     <x-template-form.template-form-input-required label="Fecha de inicio" type="date"
                                         name="fecha_inicio" placeholder=""
                                         grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4" autocomplete=""
-                                        value="{{optional($item)->fecha_inicio ?? '' }}" />
+                                        value="{{optional($item)->fecha_inicio ?? '' }}" required="true"/>
 
                                     <x-template-form.template-form-input-required label="Fecha fin" type="date"
                                         name="fecha_fin" placeholder=""
                                         grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4" autocomplete=""
-                                        value="{{optional($item)->fecha_fin ?? '' }}" />
+                                        value="{{optional($item)->fecha_fin ?? '' }}" required="true" />
 
                                     <x-template-form.template-form-input-check
                                         idDiv="id_checkbox_Template_tooltip_fisico" name="es_doc_fisico_box"
@@ -142,14 +142,14 @@
                                     <x-template-form.template-form-input-required label="Horas respuesta" type="integer"
                                         name="horas_respuesta" placeholder="HORAS DE RESPUESTA"
                                         grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4" autocomplete=""
-                                        value="{{optional($item)->horas_respuesta ?? '' }}" />
+                                        value="{{optional($item)->horas_respuesta ?? '' }}" required="true"/>
                                 </div>
 
                                 <div class="row">
                                     <x-template-form.template-form-input-text-area
                                         grid="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" label="Asunto"
                                         name="asunto" placeholder="ASUNTO"
-                                        value="{{ optional($item)->asunto ?: '' }}" />
+                                        value="{{ optional($item)->asunto ?: '' }}" required="true"/>
                                 </div>
 
                                 <div class="row">
@@ -164,25 +164,25 @@
 
                                     <x-template-form.template-form-select-required :selectValue="$selectArea"
                                         :selectEdit="$selectAreaEdit" name="id_cat_area" tittle="Área"
-                                        grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4" />
+                                        grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4" required="true"/>
 
                                     <x-template-form.template-form-select-required :selectValue="$selectUser"
                                         :selectEdit="$selectUserEdit" name="id_usuario_area" tittle="Usuario"
-                                        grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4" />
+                                        grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4" required="true"/>
 
                                     <x-template-form.template-form-select-required :selectValue="$selectEnlace"
                                         :selectEdit="$selectEnlaceEdit" name="id_usuario_enlace" tittle="Enlace"
-                                        grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4" />
+                                        grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4" required="true"/>
                                 </div>
 
                                 <div class="row">
                                     <x-template-form.template-form-select-required :selectValue="$selectUnidad"
                                         :selectEdit="$selectUnidadEdit" name="id_cat_unidad" tittle="Unidad"
-                                        grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4" />
+                                        grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4" required="true"/>
 
                                     <x-template-form.template-form-select-required :selectValue="$selectCoordinacion"
                                         :selectEdit="$selectCoordinacionEdit" name="id_cat_coordinacion"
-                                        tittle="Coordinación" grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4" />
+                                        tittle="Coordinación" grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4" required="true"/>
                                 </div>
 
 
@@ -190,15 +190,15 @@
                                 <div class="row">
                                     <x-template-form.template-form-select-required :selectValue="$selectStatus"
                                         :selectEdit="$selectStatusEdit" name="id_cat_estatus" tittle="Estatus"
-                                        grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4" />
+                                        grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4" required="true"/>
 
                                     <x-template-form.template-form-select-required :selectValue="$selectTramite"
                                         :selectEdit="$selectTramiteEdit" name="id_cat_tramite" tittle="Tramite"
-                                        grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4" />
+                                        grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4" required="true"/>
 
                                     <x-template-form.template-form-select-required :selectValue="$selectClave"
                                         :selectEdit="$selectClaveEdit" name="id_cat_clave" tittle="Clave"
-                                        grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4" />
+                                        grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4" required="true"/>
 
                                 </div>
 
@@ -216,7 +216,7 @@
 
                                         <x-template-form.template-form-select-required :selectValue="$selectRemitente"
                                             :selectEdit="$selectRemitenteEdit" name="id_cat_remitente"
-                                            tittle="Remitente" grid="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8" />
+                                            tittle="Remitente" grid="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8" required="true"/>
 
                                         <x-template-form.template-form-input-check idDiv="id_checkbox_Template_tooltip"
                                             name="idcheckboxTemplate" label="Agregar remitente" />
@@ -228,7 +228,7 @@
                                     <x-template-form.template-form-input-required label="Puesto remitente" type="text"
                                         name="puesto_remitente" placeholder="PUESTO DE REMITENTE"
                                         grid="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" autocomplete=""
-                                        value="{{optional($item)->puesto_remitente ?? '' }}" />
+                                        value="{{optional($item)->puesto_remitente ?? '' }}" required="true"/>
                                 </div>
 
                                 <div id="mostrar_ocultar_template">
@@ -236,19 +236,19 @@
                                         <x-template-form.template-form-input-required label="Nombre" type="text"
                                             name="remitente_nombre" placeholder="NOMBRE"
                                             grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" autocomplete=""
-                                            value="" />
+                                            value="" required="true"/>
 
                                         <x-template-form.template-form-input-required label="Apellido paterno"
                                             type="text" name="remitente_apellido_paterno" placeholder="APELLIDO PATERNO"
                                             grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" autocomplete=""
-                                            value="" />
+                                            value="" required="true"/>
                                     </div>
 
                                     <div class="row">
                                         <x-template-form.template-form-input-required label="Apellido materno"
                                             type="text" name="remitente_apellido_materno" placeholder="APELLIDO MATERNO"
                                             grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" autocomplete=""
-                                            value="" />
+                                            value="" required="true"/>
 
                                         <x-template-form.template-form-input-required label="RFC" type="text"
                                             name="remitente_rfc" placeholder="RFC"

@@ -58,11 +58,11 @@
                                 <div class="row">
                                     <x-template-form.template-form-select-required :selectValue="$selectDependencia"
                                         :selectEdit="$selectDependenciaEdit" name="id_cat_dependencia" tittle="Dependencia"
-                                        grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" />
+                                        grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" required="true"/>
 
                                     <x-template-form.template-form-select-required :selectValue="$selectArea"
                                         :selectEdit="$selectAreaEdit" name="id_cat_dependencia_area" tittle="Área"
-                                        grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" />
+                                        grid="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" required="true"/>
                                 </div>
 
 
@@ -71,12 +71,12 @@
                                     <x-template-form.template-form-input-required label="Fecha de documento" type="date"
                                         name="fecha_documento" placeholder=""
                                         grid="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6" autocomplete=""
-                                        value="{{optional($item)->fecha_documento ?? '' }}" />
+                                        value="{{optional($item)->fecha_documento ?? '' }}" required="true"/>
 
                                     <x-template-form.template-form-input-required label="No. Documento" type="text"
                                         name="no_documento" placeholder="NO. DOCUMENTO"
                                         grid="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6" autocomplete=""
-                                        value="{{optional($item)->no_documento ?? '' }}" />
+                                        value="{{optional($item)->no_documento ?? '' }}" required="true"/>
                                 </div>
 
                                 <div class="row">
@@ -84,12 +84,12 @@
                                     <x-template-form.template-form-input-text-area
                                         grid="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" label="Asunto"
                                         name="asunto" placeholder="ASUNTO"
-                                        value="{{ optional($item)->asunto ?: '' }}" />
+                                        value="{{ optional($item)->asunto ?: '' }}" required="true"/>
 
                                     <x-template-form.template-form-input-text-area
                                         grid="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" label="Observaciones"
                                         name="observaciones" placeholder="OBSERVACIONES"
-                                        value="{{ optional($item)->observaciones ?: '' }}" />
+                                        value="{{ optional($item)->observaciones ?: '' }}" required="true"/>
                                 </div>
 
                                 <x-template-button.button-form-footer routeBack="{{ route('external.list') }}" />
