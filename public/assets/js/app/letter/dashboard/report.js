@@ -11,6 +11,13 @@ $(document).ready(function () {
             $('#modalReport').fadeOut(); // Ocultar la ventana modal
         }
     });
+
+
+});
+
+
+$('#idCancelReport').click(function () { //Se pulsa el boton de cancelar
+    $('#modalReport').fadeOut();
 });
 
 
