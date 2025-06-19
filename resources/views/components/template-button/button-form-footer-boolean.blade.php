@@ -7,7 +7,7 @@
         </a>
         @if ($status)
             <button type="submit" class="btn"
-                style="font-size: 1rem; padding: 10px 20px; margin-left: 10px; background-color: #10312B; color: white; border: none;">
+                style="font-size: 1rem; padding: 10px 20px; margin-left: 10px; background-color: #BC955C; color: white; border: none;">
                 <i class="fas fa-save"></i> Guardar
             </button>
         @endif
