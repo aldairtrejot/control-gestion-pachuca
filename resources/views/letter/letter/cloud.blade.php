@@ -65,7 +65,7 @@
 
                         <!-- modal deelete -->
                         <x-template-form.template-form-delete tittleModal="modalBackdrop" cancelModal="cancelBtn"
-                            confirmButton="confirmBtn" />
+                            confirmButton="confirmBtn" click="confirmDelete();"/>
 
 
                         <!-- Contenedor principal con flexbox -->

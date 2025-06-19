@@ -120,15 +120,14 @@ function sendFile(file, id_entrada_salida, esOficio) {
 
 //La funcion elimina un documento
 function deleteDocument(uid) {
-
     $('#modalBackdrop').fadeIn();//Iniciar ventana modal
 
     $('#cancelBtn').click(function () { //Se pulsa el boton de cancelar
         $('#modalBackdrop').fadeOut(); // Cerrar la ventana modal
     });
 
-    $('#confirmBtn').click(function () {///Se da click al boton de confirmar y se ejecuta el evento de eliminacion
-        deleteDocumenServer(uid);
+    $('#confirmBtn').off('click').on('click', function () {
+        deleteDocumenServer(uid);      // Ejecutar acción
         $('#modalBackdrop').fadeOut(); // Cerrar modal después de confirmar
     });
 }

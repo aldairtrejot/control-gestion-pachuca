@@ -143,11 +143,13 @@ function deleteDocument(uid) {
         $('#modalBackdrop').fadeOut(); // Cerrar la ventana modal
     });
 
-    $('#confirmBtn').click(function () {///Se da click al boton de confirmar y se ejecuta el evento de eliminacion
-        deleteDocumenServer(uid);
+    $('#confirmBtn').off('click').on('click', function () {
+        deleteDocumenServer(uid);      // Ejecutar acción
         $('#modalBackdrop').fadeOut(); // Cerrar modal después de confirmar
     });
 }
+
+
 
 //La funcion elimina oficios del repositorio, solo de la base
 function deleteDocumenServer(uid) {
